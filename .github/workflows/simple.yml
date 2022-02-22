@@ -27,6 +27,7 @@ jobs:
     #Default windows shell is powershell
     run-windows-commands:
       runs-on: windows-latest
+      needs: ["run-sheel-command"]
       steps:
         - name: Directory Powershell
           run: Get-Location
