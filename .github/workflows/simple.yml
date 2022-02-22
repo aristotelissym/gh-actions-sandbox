@@ -18,3 +18,9 @@ jobs:
           run: | #Use again the pipe | to run mupliple line commands
             node -v
             npm -v
+        - name: python Commands
+          run: |
+            import platform
+            print
+            (platform.processor())
+          shell: python
