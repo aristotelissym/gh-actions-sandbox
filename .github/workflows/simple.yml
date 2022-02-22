@@ -1,0 +1,20 @@
+# Name of entire workflow
+name: Shell Commands
+
+#Commands that triggers the workflows with the "on" prefix.
+on: [push]
+
+#Name of each job is the key uder the prefix "jobs"
+#Each job can have multiple options and inside an object.
+#Steps has multiple objects which indicates each step.
+#Steps can be an action or an cmd command
+jobs:
+    run-shell-command:
+       runs-on: ubuntu-latest
+       steps:
+        - name: echo a string
+          run: echo "Hello, World!"
+        - name: multiline script commands
+          run: | #Use again the pipe | to run mupliple line commands
+            node -v
+            npm -v

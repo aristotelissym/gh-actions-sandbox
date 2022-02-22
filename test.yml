@@ -1,0 +1,24 @@
+# /Nums/String doesn't need quotes
+# Tabs are not allowed in yaml.
+name: Aristotle
+age: 28
+address: "Hi mom"
+active: true
+
+objKey:
+  objKey1: value1
+  objKey2: value2
+  objKey3:
+    objKey31: value31
+
+jsonObj: { jsonkey1: valuej1, jsonkey2: valuej2, jsonkey3: { key: value } }
+
+array:
+    - item1
+    - item2
+
+#To preserve new lines in long test we se the pipe symbol |, else we use the >
+longText: >
+    some stuff etc etc etc etc etc
+    djslkjfskjfdjslkjfdskfd
+    lfksdgdgfd
