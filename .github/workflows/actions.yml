@@ -1,0 +1,22 @@
+name: Actions workflow
+
+on: [push]
+
+jobs:
+  #These are not prefixed, but a name we provide for the job that is running.
+  #This name will be also visible in the Action in GH
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple JS Action
+        id: greet
+        #We can use a file to run this like we do with exec files (./) or,
+        #Can use an action of a public gh repository (published action)
+        #To do so, we put <username>/<repo-name>@<branch-name> e.g. actions/hello-world-javascript-action
+        #Also, reference the version number, or the commit number
+        #<username>/<repo-name>@v1, <username>/<repo-name>@<commit-number>
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: Aristotle
+      - name: Log Greeting Time
+        run: echo "${{ steps.greet.outputs.time }}"
