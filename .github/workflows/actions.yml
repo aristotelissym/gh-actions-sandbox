@@ -1,7 +1,21 @@
 name: Actions workflow
 
 #on any action that can happen in Github.
-on: [push, pull_request]
+on: 
+  push:
+    #branches can be patterns too
+    #branches-ignore
+    branches:
+      - master
+      - 'feature/*' #Matches feature/featA, not feature/featA/featB
+      - 'feature/**' #Matches any string
+      - '!feature/featC' #Ignore a pattern
+    #tags-ignore. same stuff as in branches
+    tags:
+      - v1.*
+    #paths-ignore
+    paths:
+      - '**.js' #match any js script.
 
 jobs:
   #These are not prefixed, but a name we provide for the job that is running.
