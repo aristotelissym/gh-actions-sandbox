@@ -4,6 +4,10 @@ name: Shell Commands
 #Commands that triggers the workflows with the "on" prefix.
 #on: [push]
 on:
+  types:
+    [ "name_of_event_type_called_in_the_trigger_point"]
+  # schedule:
+  #   - cron: "* * * * *"
   push:
   pull_request:
     types:
