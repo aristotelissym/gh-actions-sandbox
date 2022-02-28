@@ -4,11 +4,14 @@ name: Shell Commands
 #Commands that triggers the workflows with the "on" prefix.
 #on: [push]
 on:
-  types:
-    [ "name_of_event_type_called_in_the_trigger_point"]
+  repository_dispatch:
+    types:
+      #the same name should be in the api call(or anything else) that 
+      #triggers it.
+      ["build - test for gh actions"]
   # schedule:
   #   - cron: "* * * * *"
-  push:
+  # push:
   pull_request:
     types:
       [closed, assigned, opened, reopened]
