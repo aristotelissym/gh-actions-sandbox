@@ -8,7 +8,7 @@ on:
     types:
       #the same name should be in the api call(or anything else) that 
       #triggers it.
-      ["build - test for gh actions"]
+      ["build"]
   # schedule:
   #   - cron: "* * * * *"
   # push:
