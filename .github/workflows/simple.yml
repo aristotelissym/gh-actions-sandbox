@@ -2,7 +2,19 @@
 name: Shell Commands
 
 #Commands that triggers the workflows with the "on" prefix.
-on: [push]
+#on: [push]
+on:
+  repository_dispatch:
+    types:
+      #the same name should be in the api call(or anything else) that 
+      #triggers it.
+      ["build"]
+  # schedule:
+  #   - cron: "* * * * *"
+  # push:
+  pull_request:
+    types:
+      [closed, assigned, opened, reopened]
 
 #Name of each job is the key uder the prefix "jobs"
 #Each job can have multiple options and inside an object.
