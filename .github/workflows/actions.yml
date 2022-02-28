@@ -1,6 +1,7 @@
 name: Actions workflow
 
-on: [push]
+#on any action that can happen in Github.
+on: [push, pull_request]
 
 jobs:
   #These are not prefixed, but a name we provide for the job that is running.
@@ -8,6 +9,18 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+      - name: List Files
+        run: |
+          pwd
+          ls
+    #with this step we can clone a remote repo in our directory
+    #we can do that by doing git clone, but we can do that like this
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: List Files
+        run: |
+          pwd
+          ls
       - name: Simple JS Action
         id: greet
         #We can use a file to run this like we do with exec files (./) or,
@@ -19,4 +32,4 @@ jobs:
         with:
           who-to-greet: Aristotle
       - name: Log Greeting Time
-        run: echo "${{ steps.greet.outputs.time }}"
+        run: echo "${{ steps.greet.outputs.time  }}"
