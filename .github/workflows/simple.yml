@@ -2,7 +2,12 @@
 name: Shell Commands
 
 #Commands that triggers the workflows with the "on" prefix.
-on: [push]
+#on: [push]
+on:
+  push:
+  pull_request:
+    types:
+      [closed, assigned, opened, reopened]
 
 #Name of each job is the key uder the prefix "jobs"
 #Each job can have multiple options and inside an object.
