@@ -5,12 +5,19 @@ on: push
 
 jobs:
   node-version:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [macos-latest,ubuntu-latest,windows-latest]
+        node_version: [10,12,11]
+      fail-fast: true
+    #we can avoid hard-coding, and put the ${{}} with the thing that we want
+    #to reference
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Log node version
         run: node -v
       - uses: actions/setup-node@v1
         with:
-          node-version: 11 
+          node-version: ${{ matrix.node_version }}
       - name: Log node version
         run: node -v
