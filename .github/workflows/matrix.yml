@@ -1,0 +1,16 @@
+#Example on how to change environments when you want to run something on diff
+#ones.
+name: Matrix
+on: push
+
+jobs:
+  node-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log node version
+        run: node -v
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 11 
+      - name: Log node version
+        run: node -v

@@ -26,6 +26,7 @@ jobs:
        steps:
         - name: echo a string
           run: echo "Hello, World!"
+          continue-on-error: false
         - name: multiline script commands
           run: | #Use again the pipe | to run mupliple line commands
             node -v
