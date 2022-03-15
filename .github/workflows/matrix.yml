@@ -11,11 +11,11 @@ jobs:
         node_version: [10,12,11]
         include:
           - os: ubuntu-latest
-            node_version: 8
+            node_version: 13
             is_ubuntu_8: "true"
         exclude:
           - os: ubuntu-latest
-            node-version: 6
+            node-version: 10
       fail-fast: true
     #we can avoid hard-coding, and put the ${{}} with the thing that we want
     #to reference
