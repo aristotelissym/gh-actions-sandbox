@@ -11,7 +11,7 @@ jobs:
         node_version: [10,12,11]
         include:
           - os: ubuntu-latest
-            node_version: 13
+            node_version: 12
             is_ubuntu_8: "true"
         exclude:
           - os: ubuntu-latest
