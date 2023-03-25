@@ -6,20 +6,20 @@ address: "Hi mom"
 active: true
 
 objKey:
-  objKey1: value1
-  objKey2: value2
+  objKey1: value_1
+  objKey2: value_2
   objKey4: valueDevelop
   objKey3:
     objKey31: value31
 
-jsonObj: { jsonkey1: valuej1, jsonkey2: valuej2, jsonkey3: { key: value } }
+jsonObj: { jsonKey1: valueJ1, jsonKey2: valueJ2, jsonKey3: { key_11: value_11 } }
 
 array:
-    - item1
-    - item2
+    - item_1
+    - item_2
 
 #To preserve new lines in long test we se the pipe symbol |, else we use the >
 longText: >
-    some stuff etc etc etc etc etc
-    djslkjfskjfdjslkjfdskfd
-    lfksdgdgfd
+    Lorem ipsum dolor sit amet
+    onsectetur adipiscing elit
+    Pellentesque laoreet mollis
